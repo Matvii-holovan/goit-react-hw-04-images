@@ -1,14 +1,8 @@
-import React from 'react';
-
-const ImageGalleryItem = ({ image, toggleModal }) => (
-  <li className="ImageGalleryItem">
-    <img
-      onClick={() => toggleModal(image.largeImageURL)}
-      className="ImageGalleryItem-image"
-      src={image.webformatURL}
-      alt="img"
-    />
-  </li>
-);
-
-export default ImageGalleryItem;
+import css from './ImageGalleryItem.module.css'
+export function ImageGalleryItem({ id, webformatURL, largeImageURL, tags, handleOpenModal}) {
+    return (
+        <li className={css.ImageGalleryItem} >
+        <img key={id} src={webformatURL} alt={tags} title={largeImageURL} className={css['ImageGalleryItem-image']} onClick={handleOpenModal}/>
+      </li>
+      )
+}

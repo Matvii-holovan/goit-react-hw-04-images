@@ -1,9 +1,6 @@
-import React from 'react';
-
-const Button = ({ handleMoreImage }) => (
-  <button onClick={handleMoreImage} type="button" className="Button">
-    Load more
-  </button>
-);
-
-export default Button;
+import css from './Button.module.css'
+export function Button({onClick}) {
+  return (
+    <button type='button' className={css.Button} onClick={onClick}>Load more</button>
+  )
+}
